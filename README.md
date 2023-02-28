@@ -98,4 +98,4 @@ StableFusion is an open-source project, and we welcome contributions from the co
 - **Submit pull requests:** If you're interested in contributing code, we welcome pull requests for bug fixes, new features, and documentation improvements.
 - **Spread the word:** If you enjoy using StableFusion, please help us spread the word by sharing it with your friends, colleagues, and social media networks. We appreciate any support you can give us!
 
-We believe that open-source software is the future of technology, and we're excited to have you join us in making StableFusion a success. Thank you for your support!
+### We believe that open-source software is the future of technology, and we're excited to have you join us in making StableFusion a success. Thank you for your support!
