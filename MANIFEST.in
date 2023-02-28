@@ -1,0 +1,7 @@
+include stablefusion/pages/*.py
+include stablefusion/data/*.txt
+include stablefusion/*.txt
+include stablefusion/models/ckpt_interference/t
+include stablefusion/models/cpkt_models/t
+include stablefusion/models/diffusion_models/t
+include OTHER_LICENSES
