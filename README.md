@@ -9,8 +9,8 @@ A Web ui for **Stable Diffusion Models**.
 </a>
 
 
-![image](https://github.com/NeuralRealm/StableFusion/raw/master/static/screenshot1.png)
-![image](https://github.com/NeuralRealm/StableFusion/raw/master/static/screenshot2.png)
+![image](https://raw.githubusercontent.com/NeuralRealm/StableFusion/master/static/Screenshot1.png)
+![image](https://raw.githubusercontent.com/NeuralRealm/StableFusion/master/static/Screenshot2.png)
 
 If something doesnt work as expected, or if you need some features which are not available, then create request using [github issues](https://github.com/NeuralRealm/StableFusion/issues)
 
