@@ -4,13 +4,13 @@ A web ui and deployable API for **Stable Diffusion Models**.
 
 < under development, request features using issues, prs not accepted atm >
 
-<a target="_blank" href="https://colab.research.google.com/github/abhishekkrthakur/diffuzers/blob/main/diffuzers.ipynb">
+<a target="_blank" href="https://colab.research.google.com/drive/1gUZBNGlpKnksc6aTuSbj2Hbgp8Fn_vp_?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
 
-![image](https://github.com/abhishekkrthakur/diffuzers/raw/main/static/screenshot.jpeg)
-
+![image](https://github.com/NeuralRealm/StableFusion/raw/master/static/screenshot1.png)
+![image](https://github.com/NeuralRealm/StableFusion/raw/master/static/screenshot2.png)
 
 If something doesnt work as expected, or if you need some features which are not available, then create request using [github issues](https://github.com/NeuralRealm/StableFusion/issues)
 
@@ -85,3 +85,17 @@ optional arguments:
 If you want to use private models from huggingface hub, then you need to login using `huggingface-cli login` command.
 
 Note: You can also save your generations directly to huggingface hub if your output path points to a huggingface hub dataset repo and you have access to push to that repository. Thus, you will end up saving a lot of disk space. 
+
+## Acknowledgements
+
+I would like to express my gratitude to [Abhishek Thakur](https://github.com/abhishekkrthakur) for sharing his code for the [diffuzers package](https://github.com/abhishekkrthakur/diffuzers). This code formed the basis of the implementation used in this project, and I am grateful for his contributions to the open source community.
+
+## Contributing
+
+StableFusion is an open-source project, and we welcome contributions from the community. Whether you're a developer, designer, or user, there are many ways you can help make this project better. Here are a few ways you can get involved:
+
+- **Report issues:** If you find a bug or have a feature request, please open an issue on our [GitHub repository](https://github.com/NeuralRealm/StableFusion/issues). We appreciate detailed bug reports and constructive feedback.
+- **Submit pull requests:** If you're interested in contributing code, we welcome pull requests for bug fixes, new features, and documentation improvements.
+- **Spread the word:** If you enjoy using StableFusion, please help us spread the word by sharing it with your friends, colleagues, and social media networks. We appreciate any support you can give us!
+
+We believe that open-source software is the future of technology, and we're excited to have you join us in making StableFusion a success. Thank you for your support!
