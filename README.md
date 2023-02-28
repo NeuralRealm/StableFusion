@@ -1,6 +1,6 @@
 # StableFusion
 
-A web ui and deployable API for **Stable Diffusion Models**.
+A Web ui for **Stable Diffusion Models**.
 
 < under development, request features using issues, prs not accepted atm >
 
