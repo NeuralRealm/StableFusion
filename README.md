@@ -25,6 +25,8 @@ If something doesnt work as expected, or if you need some features which are not
 - stable diffusion upscaler
 - gfpgan
 - clip interrogator
+- Convert ckpt file to diffusers
+- Add your own diffusers model 
 - more coming soon!
 
 
@@ -50,10 +52,13 @@ pip install stablefusion
 ### Web App
 To run the web app, run the following command:
 
+For Local Host
 ```bash
 stablefusion app
 ```
 or
+
+For Public Shareable Link
 ```bash
 stablefusion app --port 10000 --ngrok_key YourNgrokAuthtoken --share
 ```
