@@ -49,10 +49,17 @@ def use_auth_token():
 
 
 def create_base_page():
-    st.set_page_config(layout="wide")
+    st.set_page_config(layout="wide",
+                       menu_items={
+                            "Get Help": "https://github.com/NeuralRealm/StableFusion/discussions",
+                            "Report a bug": "https://github.com/NeuralRealm/StableFusion/issues",
+                            'About': "# Stable Fusion\nWelcome to StableFusion! Our AI-powered web app offers a user-friendly interface for transforming text into images and generating new images with customizable styles and formats. Built with Diffusion, Python, and Streamlit, our app makes it easy to create stunning visuals with just a few clicks.\n### Getting Started\nTo get started with StableFusion, simply visit our website and follow the on-screen instructions. You can input your text or upload an image, select your preferred style and output format, and let our AI do the rest.\n### About NeuralRealm\nStableFusion was developed by NeuralRealm, an organization dedicated to advancing the field of artificial intelligence. We are grateful for their contributions and proud to offer this user-friendly web app to our users\n### Contributions\nWe welcome contributions from the community to help improve StableFusion. If you have any feedback, suggestions, or would like to contribute code, please visit our [GitHub repository](https://github.com/NeuralRealm/StableFusion).\n### License\nStable Fusion is licensed under the [GPL-3.0 license](https://github.com/NeuralRealm/StableFusion/blob/master/LICENSE). See the LICENSE file for more information."
+                       }
+                       )
     st.title("StableFusion")
     st.markdown("Welcome to **StableFusion**! A web app for **Stable Diffusion Models**")
-
+    
+    
 def download_file(file_url):
     r = requests.get(file_url, stream=True)
     with tempfile.NamedTemporaryFile(delete=False) as tmp:
