@@ -305,7 +305,7 @@ class X2Image:
         input_image = st.file_uploader(
             "Upload an image to use image2image or pix2pix",
             type=["png", "jpg", "jpeg"],
-            help="Upload an image to use image2image. If left blank, text2image will be used instead.",
+            help="Upload an image to use image2image. If left blank, text2image will be used instead. Image size must match model's image size. Usually: 512 or 768",
         )
         use_pix2pix = st.checkbox("Use pix2pix", value=False)
         if input_image is not None:
@@ -402,12 +402,17 @@ class X2Image:
             1,
             help="The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference.",
         )
-        seed = st.sidebar.number_input(
-            "Seed",
-            value=42,
-            step=1,
-            help="Random seed. Change for different results using same parameters.",
-        )
+        
+        seed_choice = st.sidebar.selectbox("Do you want a random seed", options=["Yes", "No"])
+        if seed_choice == "Yes":
+            seed = random.randint(0, 9999999)
+        else:
+            seed = st.sidebar.number_input(
+                "Seed",
+                value=42,
+                step=1,
+                help="Random seed. Change for different results using same parameters.",
+            )
 
         sub_col, download_col = st.columns(2)
         with sub_col:
