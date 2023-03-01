@@ -402,7 +402,7 @@ class X2Image:
             1,
             help="The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference.",
         )
-
+        
         seed_choice = st.sidebar.selectbox("Do you want a random seed", options=["Yes", "No"])
         if seed_choice == "Yes":
             seed = random.randint(0, 9999999)
@@ -456,3 +456,24 @@ class X2Image:
                         seed=seed,
                     )
             utils.display_and_download_images(output_images, metadata, download_col)
+            
+            try:
+                image_height = image_height
+                image_width = image_width
+            except:
+                image_width = None
+                image_height = None
+                
+            params = {
+                        "prompt": prompt,
+                        "negative_prompt": negative_prompt,
+                        "scheduler": scheduler,
+                        "image_size": (image_height, image_width),
+                        "num_images": num_images,
+                        "guidance_scale": guidance_scale,
+                        "steps": steps,
+                        "seed": seed,
+                    }
+            
+            st.text("Parameters Used For Generating The Images")
+            st.code(params)
