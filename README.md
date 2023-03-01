@@ -4,7 +4,7 @@ A Web ui for **Stable Diffusion Models**.
 
 < under development, request features using issues, prs not accepted atm >
 
-<a target="_blank" href="https://colab.research.google.com/drive/1gUZBNGlpKnksc6aTuSbj2Hbgp8Fn_vp_?usp=sharing">
+<a target="_blank" href="https://colab.research.google.com/drive/1IV5MIpCWprmRrTwAKE8vtADLLVcBL8P2?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
