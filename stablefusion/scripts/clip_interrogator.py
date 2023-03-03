@@ -19,7 +19,7 @@ from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode
 from tqdm import tqdm
 
-from stablefusion.blip import BLIP_Decoder, blip_decoder
+from stablefusion.scripts.blip import BLIP_Decoder, blip_decoder
 
 
 @dataclass

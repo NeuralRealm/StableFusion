@@ -2,7 +2,10 @@ from dataclasses import dataclass
 import streamlit as st
 import ast
 import os
+from stablefusion.utils import base_path
 
+
+base_path = base_path()
 
 @dataclass
 class ModelRemoving:
@@ -10,7 +13,7 @@ class ModelRemoving:
     def read_model_list(self):
 
         try:
-            with open('{}/model_list.txt'.format(os.path.dirname(__file__)), 'r') as f:
+            with open('{}/model_list.txt'.format(base_path), 'r') as f:
                 contents = f.read()
         except:
             with open('stablefusion/model_list.txt', 'r') as f:
@@ -22,7 +25,7 @@ class ModelRemoving:
     def write_model_list(self, model_list):
         
         try:
-            with open('{}/model_list.txt'.format(os.path.dirname(__file__)), 'w') as f:
+            with open('{}/model_list.txt'.format(base_path), 'w') as f:
                 f.write(model_list)
         except:
             with open('stablefusion/model_list.txt', 'w') as f:

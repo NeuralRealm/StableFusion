@@ -25,6 +25,7 @@ from diffusers.pipelines.latent_diffusion.pipeline_latent_diffusion import LDMBe
 from diffusers.pipelines.paint_by_example import PaintByExampleImageEncoder, PaintByExamplePipeline
 from diffusers.pipelines.stable_diffusion import StableDiffusionSafetyChecker
 from transformers import AutoFeatureExtractor, BertTokenizerFast, CLIPTextModel, CLIPTokenizer, CLIPVisionConfig
+from stablefusion.utils import base_path
 
 
 def shave_segments(path, n_shave_prefix_segments=1):
@@ -760,7 +761,7 @@ def convert_open_clip_checkpoint(checkpoint):
     return text_model
 
 
-current_path = os.path.dirname(__file__)
+current_path = base_path()
 
 
 def download_ckpt_model(checkpoint_link, checkpoint_name):

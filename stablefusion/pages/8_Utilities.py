@@ -1,12 +1,12 @@
 import streamlit as st
 
 from stablefusion import utils
-from stablefusion.gfp_gan import GFPGAN
-from stablefusion.image_info import ImageInfo
-from stablefusion.interrogator import ImageInterrogator
-from stablefusion.upscaler import Upscaler
-from stablefusion.model_adding import ModelAdding
-from stablefusion.model_removing import ModelRemoving
+from stablefusion.scripts.gfp_gan import GFPGAN
+from stablefusion.scripts.image_info import ImageInfo
+from stablefusion.scripts.interrogator import ImageInterrogator
+from stablefusion.scripts.upscaler import Upscaler
+from stablefusion.scripts.model_adding import ModelAdding
+from stablefusion.scripts.model_removing import ModelRemoving
 
 
 def app():

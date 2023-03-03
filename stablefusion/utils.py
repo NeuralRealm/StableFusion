@@ -1,4 +1,5 @@
 import base64
+from PIL import Image
 import gc
 import io
 import os
@@ -6,7 +7,7 @@ import tempfile
 import zipfile
 from datetime import datetime
 from threading import Thread
-
+import cv2
 import requests
 import streamlit as st
 import torch
@@ -58,8 +59,7 @@ def create_base_page():
                        )
     st.title("StableFusion")
     st.markdown("Welcome to **StableFusion**! A web app for **Stable Diffusion Models**")
-    
-    
+
 def download_file(file_url):
     r = requests.get(file_url, stream=True)
     with tempfile.NamedTemporaryFile(delete=False) as tmp:
@@ -68,6 +68,10 @@ def download_file(file_url):
                 tmp.write(chunk)
     return tmp.name
 
+
+def base_path():
+
+    return os.path.dirname(__file__)
 
 def cache_folder():
     _cache_folder = os.path.join(os.path.expanduser("~"), ".stablefusion")
@@ -155,6 +159,7 @@ def display_and_download_images(output_images, metadata, download_col=None):
         with tempfile.TemporaryDirectory() as tmpdir:
             gallery_images = []
             for i, image in enumerate(output_images):
+                
                 image.save(os.path.join(tmpdir, f"{i + 1}.png"), pnginfo=metadata)
                 with open(os.path.join(tmpdir, f"{i + 1}.png"), "rb") as img:
                     encoded = base64.b64encode(img.read()).decode()

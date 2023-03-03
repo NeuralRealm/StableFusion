@@ -4,7 +4,7 @@ import streamlit as st
 from loguru import logger
 
 from stablefusion import utils
-from stablefusion.x2image import X2Image
+from stablefusion.scripts.x2image import X2Image
 import ast
 import os
 

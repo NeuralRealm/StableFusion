@@ -23,3 +23,5 @@ transformers==4.25.1
 uvicorn==0.15.0
 OmegaConf
 tqdl
+xformers
+bitsandbytes

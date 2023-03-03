@@ -1,7 +1,7 @@
 import streamlit as st
 
 from stablefusion import utils
-from stablefusion.inpainting import Inpainting
+from stablefusion.scripts.inpainting import Inpainting
 
 
 def app():

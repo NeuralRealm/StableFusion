@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 import streamlit as st
-from clip_interrogator import Config, Interrogator
+from stablefusion.scripts.clip_interrogator import Config, Interrogator
 from huggingface_hub import hf_hub_download
 from loguru import logger
 from PIL import Image

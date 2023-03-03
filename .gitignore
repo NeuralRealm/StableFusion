@@ -11,7 +11,8 @@ gfpgan/
 *.pth
 abhishek/
 diffout/
-
+7_Train.py
+trainner_assets
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

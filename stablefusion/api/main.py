@@ -8,8 +8,8 @@ from starlette.middleware.cors import CORSMiddleware
 
 from stablefusion.api.schemas import Img2ImgParams, ImgResponse, InpaintingParams, InstructPix2PixParams, Text2ImgParams
 from stablefusion.api.utils import convert_to_b64_list
-from stablefusion.inpainting import Inpainting
-from stablefusion.x2image import X2Image
+from stablefusion.scripts.inpainting import Inpainting
+from stablefusion.scripts.x2image import X2Image
 
 
 app = FastAPI(

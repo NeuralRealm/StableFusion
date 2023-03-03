@@ -69,6 +69,10 @@ class Inpainting:
         self, prompt, negative_prompt, image, mask, guidance_scale, scheduler, steps, seed, height, width, num_images
     ):
 
+        if seed == -1:
+            # generate random seed
+            seed = random.randint(0, 999999)
+
         self._set_scheduler(scheduler)
         logger.info(self.pipeline.scheduler)
 
@@ -175,16 +179,14 @@ class Inpainting:
             key="inpainting_steps",
             help="The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference.",
         )
-        seed_choice = st.sidebar.selectbox("Do you want a random seed", options=["Yes", "No"])
-        if seed_choice == "Yes":
-            seed = random.randint(0, 9999999)
-        else:
-            seed = st.sidebar.number_input(
-                "Seed",
-                value=42,
-                step=1,
-                help="Random seed. Change for different results using same parameters.",
-            )
+        seed = st.sidebar.number_input(
+            "Seed",
+            value=42,
+            min_value=-1,
+            max_value=999999,
+            step=1,
+            help="Random seed. Change for different results using same parameters.",
+        )
 
         if uploaded_file is not None:
             with col2:

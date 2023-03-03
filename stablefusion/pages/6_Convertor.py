@@ -1,13 +1,13 @@
 import streamlit as st
 
 from stablefusion import utils
-from stablefusion.gfp_gan import GFPGAN
-from stablefusion.image_info import ImageInfo
-from stablefusion.interrogator import ImageInterrogator
-from stablefusion.upscaler import Upscaler
-from stablefusion.model_adding import ModelAdding
-from stablefusion.model_removing import ModelRemoving
-from stablefusion.ckpt_to_diffusion import convert_ckpt_to_diffusion
+from stablefusion.scripts.gfp_gan import GFPGAN
+from stablefusion.scripts.image_info import ImageInfo
+from stablefusion.scripts.interrogator import ImageInterrogator
+from stablefusion.scripts.upscaler import Upscaler
+from stablefusion.scripts.model_adding import ModelAdding
+from stablefusion.scripts.model_removing import ModelRemoving
+from stablefusion.scripts.ckpt_to_diffusion import convert_ckpt_to_diffusion
 
 
 def app():
@@ -51,8 +51,6 @@ def app():
                     convert_ckpt_to_diffusion(device=device, checkpoint_link=ckpt_model, checkpoint_name=ckpt_model_name, num_in_channels=num_in_channels, scheduler_type=scheduler_type, pipeline_type=pipeline_type, extract_ema=extract_ema, dump_path=" ", image_size=image_size, original_config_file=config_file, prediction_type=prediction_type, overwrite_file=overwrite_mode)
                     
 
-    elif task == "Diffusion to CKPT":
-        st.subheader("Feature Comming soon...")
 
 if __name__ == "__main__":
     app()

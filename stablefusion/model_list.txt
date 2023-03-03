@@ -1,1 +1,1 @@
-['runwayml/stable-diffusion-v1-5', 'stabilityai/stable-diffusion-2-1', 'Linaqruf/anything-v3.0', 'Envvi/Inkpunk-Diffusion', 'prompthero/openjourney', 'darkstorm2150/Protogen_v2.2_Official_Release', 'darkstorm2150/Protogen_x3.4_Official_Release', 'anhduongsswr/uberRealisticPornMerge_urpmv12']
+['runwayml/stable-diffusion-v1-5', 'stabilityai/stable-diffusion-2-1', 'Linaqruf/anything-v3.0', 'Envvi/Inkpunk-Diffusion', 'prompthero/openjourney', 'darkstorm2150/Protogen_v2.2_Official_Release', 'darkstorm2150/Protogen_x3.4_Official_Release']

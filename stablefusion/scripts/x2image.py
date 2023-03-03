@@ -8,7 +8,6 @@ from dataclasses import dataclass
 from io import BytesIO
 from typing import Optional
 
-
 import requests
 import streamlit as st
 import torch
@@ -367,7 +366,7 @@ class X2Image:
         # add section advanced options
         st.sidebar.markdown("### Advanced options")
         scheduler = st.sidebar.selectbox(
-            "Scheduler", available_schedulers, index=0, help="Scheduler to use for generation"
+            "Scheduler", available_schedulers, index=0, help="Scheduler(Sampler) to use for generation"
         )
         guidance_scale = st.sidebar.slider(
             "Guidance scale",
@@ -403,7 +402,7 @@ class X2Image:
             1,
             help="The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference.",
         )
-        
+
         seed_choice = st.sidebar.selectbox("Do you want a random seed", options=["Yes", "No"])
         if seed_choice == "Yes":
             seed = random.randint(0, 9999999)
@@ -414,6 +413,7 @@ class X2Image:
                 step=1,
                 help="Random seed. Change for different results using same parameters.",
             )
+        
 
         sub_col, download_col = st.columns(2)
         with sub_col:
@@ -457,7 +457,6 @@ class X2Image:
                         seed=seed,
                     )
             utils.display_and_download_images(output_images, metadata, download_col)
-            
             try:
                 image_height = image_height
                 image_width = image_width
