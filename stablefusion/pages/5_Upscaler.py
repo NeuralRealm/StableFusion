@@ -27,9 +27,7 @@ def app():
                     "RealESRGAN_x4plus_anime_6B",
                     "RealESRGAN_x2plus",
                     "realesr-animevideov3",
-                    "realesr-general-x4v3",
-                    "SD Upscaler",
-                    "GFPGAN",
+                    "realesr-general-x4v3"
                  ],
     )
 
