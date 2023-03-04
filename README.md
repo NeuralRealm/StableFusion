@@ -22,10 +22,10 @@ If something doesnt work as expected, or if you need some features which are not
 - instruct pix2pix
 - textual inversion
 - image info
-- stable diffusion upscaler
-- gfpgan
+- Upscale Your Image
 - clip interrogator
 - Convert ckpt file to diffusers
+- Convert safetensors file to diffusers
 - Add your own diffusers model 
 - more coming soon!
 
