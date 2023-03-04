@@ -2,13 +2,14 @@ import streamlit as st
 
 from stablefusion.scripts.textual_inversion import TextualInversion
 from stablefusion import utils
+from stablefusion.Home import read_model_list
 
 def app():
     utils.create_base_page()
     with st.form("textual_inversion_form"):
-        model = st.text_input(
+        model = st.selectbox(
             "Which base model do you want to use?",
-            value="CompVis/stable-diffusion-v1-4"
+            options=read_model_list()
             if st.session_state.get("textual_inversion_model") is None
             else st.session_state.textual_inversion_model,
         )
