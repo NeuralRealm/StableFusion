@@ -93,7 +93,14 @@ Note: You can also save your generations directly to huggingface hub if your out
 
 ## Acknowledgements
 
-I would like to express my gratitude to [Abhishek Thakur](https://github.com/abhishekkrthakur) for sharing his code for the [diffuzers package](https://github.com/abhishekkrthakur/diffuzers). This code formed the basis of the implementation used in this project, and I am grateful for his contributions to the open source community.
+I would like to express my gratitude to the following individuals and organizations for sharing their code, which formed the basis of the implementation used in this project:
+
+- [Tencent ARC](https://github.com/TencentARC) for their code for the [GFPGAN](https://github.com/TencentARC/GFPGAN) package, which was used for image super-resolution.
+- [LexKoin](https://github.com/LexKoin) for their code for the [Real-ESRGAN-UpScale](https://github.com/LexKoin/Real-ESRGAN-UpScale) package, which was used for image enhancement.
+- [Hugging Face](https://github.com/huggingface) for their code for the [diffusers](https://github.com/huggingface/diffusers) package, which was used for optimizing the model's parameters.
+- [Abhishek Thakur](https://github.com/abhishekkrthakur) for sharing his code for the [diffuzers](https://github.com/abhishekkrthakur/diffuzers) package, which was also used for optimizing the model's parameters.
+
+I am grateful for their contributions to the open source community, which made this project possible.
 
 ## Contributing
 
