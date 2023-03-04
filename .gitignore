@@ -11,15 +11,21 @@ gfpgan/
 *.pth
 abhishek/
 diffout/
-7_Train.py
-trainner_assets
+datasets/*
+experiments/*
+results/*
+tb_logger/*
+wandb/*
+tmp/*
+weights/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+.pypirc
 # C extensions
 *.so
+7_Train.py
 
 # Distribution / packaging
 .Python

@@ -25,3 +25,4 @@ OmegaConf
 tqdl
 xformers
 bitsandbytes
+safetensors
