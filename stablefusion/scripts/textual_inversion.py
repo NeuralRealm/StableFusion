@@ -145,7 +145,7 @@ class TextualInversion:
         num_images = st.sidebar.slider("Number of images per prompt", 1, 30, 1, 1)
         steps = st.sidebar.slider("Steps", 1, 150, 50, 1)
         seed_placeholder = st.sidebar.empty()
-        seed = seed_placeholder.number_input("Seed", value=42, min_value=1, max_value=999999, step=1)
+        seed = seed_placeholder.number_input("Seed", value=42, min_value=1, step=1)
         random_seed = st.sidebar.button("Random seed")
         _seed = torch.randint(1, 999999, (1,)).item()
         if random_seed:

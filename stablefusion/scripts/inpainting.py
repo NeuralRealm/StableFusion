@@ -183,7 +183,6 @@ class Inpainting:
             "Seed",
             value=42,
             min_value=-1,
-            max_value=999999,
             step=1,
             help="Random seed. Change for different results using same parameters.",
         )

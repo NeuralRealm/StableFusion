@@ -111,7 +111,7 @@ class Text2Image:
         random_seed = st.sidebar.button("Random seed")
         _seed = torch.randint(1, 999999, (1,)).item()
         if random_seed:
-            seed = seed_placeholder.number_input("Seed", value=_seed, min_value=1, max_value=999999, step=1)
+            seed = seed_placeholder.number_input("Seed", value=_seed, min_value=1, step=1)
 
         sub_col, download_col = st.columns(2)
         with sub_col:
