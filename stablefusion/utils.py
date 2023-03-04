@@ -183,10 +183,13 @@ def display_and_download_images(output_images, metadata, download_col=None):
                 img_style={"margin": "5px", "height": "512px", "width": "512px"},
             )
 
+            now = datetime.now()
+            formatted_date_time = now.strftime("%Y-%m-%d_%H_%M_%S")
+
             # add download link
             st.markdown(
                 f"""
-                <a href="data:application/zip;base64,{encoded}" download="images.zip">
+                <a href="data:application/zip;base64,{encoded}" download="images_{formatted_date_time}.zip">
                     <h3>Download Images</h3>
                 </a>
                 """,

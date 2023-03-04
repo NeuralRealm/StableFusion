@@ -4,7 +4,7 @@ import shutil
 from dataclasses import dataclass
 from io import BytesIO
 from typing import Optional
-
+import datetime
 import cv2
 import numpy as np
 import streamlit as st
@@ -154,5 +154,7 @@ class GFPGAN:
                     buffered = BytesIO()
                     output_img.save(buffered, format="PNG")
                     img_str = base64.b64encode(buffered.getvalue()).decode()
-                    href = f'<a href="data:file/png;base64,{img_str}" download="gfpgan.png">Download Image</a>'
+                    now = datetime.datetime.now()
+                    formatted_date_time = now.strftime("%Y-%m-%d_%H_%M_%S")
+                    href = f'<a href="data:file/png;base64,{img_str}" download="gfpgan_{formatted_date_time}.png"><h3>Download Image</h3></a>'
                     st.markdown(href, unsafe_allow_html=True)
