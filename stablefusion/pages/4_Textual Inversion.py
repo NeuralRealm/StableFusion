@@ -10,8 +10,6 @@ def app():
         model = st.selectbox(
             "Which base model do you want to use?",
             options=read_model_list()
-            if st.session_state.get("textual_inversion_model") is None
-            else st.session_state.textual_inversion_model,
         )
         token_identifier = st.text_input(
             "Token identifier",
