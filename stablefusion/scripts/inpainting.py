@@ -8,7 +8,7 @@ from typing import Optional
 import requests
 import streamlit as st
 import torch
-from diffusers import StableDiffusionInpaintPipeline
+from diffusers import StableDiffusionInpaintPipeline, StableDiffusionInpaintPipelineLegacy
 from loguru import logger
 from PIL import Image
 from PIL.PngImagePlugin import PngInfo
@@ -22,16 +22,25 @@ class Inpainting:
     model: Optional[str] = None
     device: Optional[str] = None
     output_path: Optional[str] = None
+    pipeline_select: Optional[str] = None
 
     def __str__(self) -> str:
-        return f"Inpainting(model={self.model}, device={self.device}, output_path={self.output_path})"
+        return f"Inpainting(model={self.model}, device={self.device}, pipeline={self.pipeline_select}, output_path={self.output_path})"
 
     def __post_init__(self):
-        self.pipeline = StableDiffusionInpaintPipeline.from_pretrained(
-            self.model,
-            torch_dtype=torch.float16 if self.device == "cuda" else torch.float32,
-            use_auth_token=utils.use_auth_token(),
-        )
+
+        if self.pipeline_select == "StableDiffusionInpaintPipelineLegacy":
+            self.pipeline = StableDiffusionInpaintPipelineLegacy.from_pretrained(
+                self.model,
+                torch_dtype=torch.float16 if self.device == "cuda" else torch.float32,
+                use_auth_token=utils.use_auth_token(),
+            )
+        else:
+            self.pipeline = StableDiffusionInpaintPipeline.from_pretrained(
+                self.model,
+                torch_dtype=torch.float16 if self.device == "cuda" else torch.float32,
+                use_auth_token=utils.use_auth_token(),
+            )
 
         self.pipeline.to(self.device)
         self.pipeline.safety_checker = utils.no_safety_checker
@@ -81,19 +90,33 @@ class Inpainting:
             num_images = 1
         else:
             generator = torch.Generator(device=self.device).manual_seed(seed)
-
-        output_images = self.pipeline(
-            prompt=prompt,
-            negative_prompt=negative_prompt,
-            image=image,
-            mask_image=mask,
-            num_inference_steps=steps,
-            guidance_scale=guidance_scale,
-            num_images_per_prompt=num_images,
-            generator=generator,
-            height=height,
-            width=width,
-        ).images
+        
+        if self.pipeline_select == "StableDiffusionInpaintPipelineLegacy":
+            output_images = self.pipeline(
+                prompt=prompt,
+                negative_prompt=negative_prompt,
+                image=image,
+                mask_image=mask,
+                num_inference_steps=steps,
+                guidance_scale=guidance_scale,
+                num_images_per_prompt=num_images,
+                generator=generator,
+                #height=height,
+                #width=width,
+            ).images
+        else:
+            output_images = self.pipeline(
+                prompt=prompt,
+                negative_prompt=negative_prompt,
+                image=image,
+                mask_image=mask,
+                num_inference_steps=steps,
+                guidance_scale=guidance_scale,
+                num_images_per_prompt=num_images,
+                generator=generator,
+                height=height,
+                width=width,
+            ).images
         metadata = {
             "prompt": prompt,
             "negative_prompt": negative_prompt,
@@ -179,16 +202,14 @@ class Inpainting:
             key="inpainting_steps",
             help="The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference.",
         )
-        seed_choice = st.sidebar.selectbox("Do you want a random seed", options=["Yes", "No"])
-        if seed_choice == "Yes":
-            seed = random.randint(0, 9999999)
-        else:
-            seed = st.sidebar.number_input(
-                "Seed",
-                value=42,
-                step=1,
-                help="Random seed. Change for different results using same parameters.",
-            )
+        seed = st.sidebar.number_input(
+            "Seed",
+            value=42,
+            min_value=-1,
+            max_value=999999999999,
+            step=1,
+            help="Random seed. Change for different results using same parameters.",
+        )
 
         if uploaded_file is not None:
             with col2:
