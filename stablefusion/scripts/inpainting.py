@@ -216,7 +216,7 @@ class Inpainting:
                 drawing_mode = st.selectbox(
                     "Drawing tool:", ("freedraw", "rect", "circle"), key="inpainting_drawing_mode"
                 )
-                stroke_width = st.slider("Stroke width: ", 1, 25, 8, key="inpainting_stroke_width")
+                stroke_width = st.slider("Stroke width: ", 1, 50, 8, key="inpainting_stroke_width")
 
             pil_image = Image.open(uploaded_file).convert("RGB")
             img_height, img_width = pil_image.size
