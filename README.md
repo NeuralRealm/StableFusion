@@ -2,7 +2,20 @@
 
 A Web ui for **Stable Diffusion Models**.
 
-< under development, request features using issues, prs not accepted atm >
+## Update (Version 0.1.4)
+
+In this version, we've added two major features to the project:
+
+- **ControlNet Option**
+- **OpenPose Editor**
+
+We've also made the following improvements and bug fixes:
+
+- **Improved File Arrangement**: We've rearranged the files in the project to make it more organized and convenient for users to navigate.
+- **Fixed Random Seed Generator**: We've fixed a bug in the random seed generator that was causing incorrect results. This fix ensures that the project operates more accurately and reliably.
+
+We hope these updates will improve the overall functionality and user experience of the project. As always, please feel free to reach out to us if you have any questions or feedback.
+
 
 <a target="_blank" href="https://colab.research.google.com/drive/1IV5MIpCWprmRrTwAKE8vtADLLVcBL8P2?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
@@ -22,6 +35,7 @@ If something doesnt work as expected, or if you need some features which are not
 - instruct pix2pix
 - textual inversion
 - ControlNet
+- OpenPose Editor
 - image info
 - Upscale Your Image
 - clip interrogator
