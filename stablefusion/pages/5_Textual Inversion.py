@@ -9,7 +9,7 @@ def app():
     with st.form("textual_inversion_form"):
         model = st.selectbox(
             "Which base model do you want to use?",
-            options=read_model_list()
+            options=read_model_list(),
         )
         token_identifier = st.text_input(
             "Token identifier",
