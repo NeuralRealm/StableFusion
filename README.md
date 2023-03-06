@@ -21,6 +21,7 @@ If something doesnt work as expected, or if you need some features which are not
 - image to image
 - instruct pix2pix
 - textual inversion
+- ControlNet
 - image info
 - Upscale Your Image
 - clip interrogator
